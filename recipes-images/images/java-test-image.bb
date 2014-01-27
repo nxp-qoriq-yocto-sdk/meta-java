@@ -4,7 +4,7 @@ inherit core-image
 
 IMAGE_LINGUAS = " "
 
-
+IMAGE_FSTYPES = "tar.gz ext2.gz ext2.gz.u-boot"
 IMAGE_INSTALL = "busybox modutils-initscripts initscripts opkg udev sysvinit netbase base-files base-passwd busybox-hwclock \
                  ${ROOTFS_PKGMANAGE_BOOTSTRAP} ${CORE_IMAGE_EXTRA_INSTALL} \
                  openjdk-7-jre openjdk-7-vm-jamvm openjdk-7-vm-cacao \
