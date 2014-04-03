@@ -16,4 +16,6 @@ IMAGE_INSTALL = "busybox modutils-initscripts initscripts opkg udev sysvinit net
                  classpath-tools \
                  jamvm \
                  cacao \
+                 openjdk-6-doc openjdk-6-demo openjdk-6-jdk \
+                 openjdk-7-doc openjdk-7-demo openjdk-7-jdk \
 "
