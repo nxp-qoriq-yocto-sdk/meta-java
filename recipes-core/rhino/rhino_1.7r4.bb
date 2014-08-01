@@ -7,7 +7,7 @@ BBCLASSEXTEND = "native"
 inherit java-library
 
 SRC_URI = "\
-	https://github.com/downloads/mozilla/rhino/rhino1_7R4.zip \
+	ftp://ftp.dk.pureftpd.org/.disk4/exherbo/rhino1_7R4.zip \
 	file://rhino \
 	file://rhino-jsc \
 	"
