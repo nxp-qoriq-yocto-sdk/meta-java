@@ -24,8 +24,19 @@ SRC_URI[jaxp.sha256sum] = "490f696218c1fed9cb180680af883fe309b414fec232e9cec1964
 
 ICEDTEAPATCHES += "file://icedtea-jdk-rmi-crosscompile.patch;apply=no \
                    file://icedtea-disable-sane-alsa.patch;apply=no \
+                   file://icedtea-openjdk-remove-currency-data-generation-expi.patch;apply=no \
                   "
 
 DISTRIBUTION_PATCHES += "patches/icedtea-jdk-rmi-crosscompile.patch \
                          patches/icedtea-disable-sane-alsa.patch \
                         "
+
+do_configure_append () {
+ cd ${B}/openjdk
+ patch -p1 <${WORKDIR}/icedtea-openjdk-remove-currency-data-generation-expi.patch
+ cd -
+ cd ${B}/openjdk-ecj
+ patch -p1 <${WORKDIR}/icedtea-openjdk-remove-currency-data-generation-expi.patch
+ cd -
+}
+
