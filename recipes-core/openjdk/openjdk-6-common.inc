@@ -383,7 +383,8 @@ FILES_${JDKPN}-jdk = " \
                        ${JDK_HOME}/THIRD_PARTY_README \
                        ${JDK_HOME}/LICENSE \
                       "
-RDEPENDS_${JDKPN}-jre = "${JDKPN}-java"
+RDEPENDS_${JDKPN}-jre = "${JDKPN}-java ${JDKPN}-common"
+RDEPENDS_${JDKPN}-java = "${JDKPN}-common"
 RPROVIDES_${JDKPN}-jre = "java2-runtime"
 
 RDEPENDS_${JDKPN}-jdk = "${JDKPN}-jre"
