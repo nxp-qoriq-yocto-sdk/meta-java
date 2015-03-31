@@ -31,21 +31,16 @@ export JAVA = "java"
 
 EXTRA_OECONF = "\
   --with-glibj \
-  --with-ecj=javac \
-  --with-fastjar=fastjar \
   --includedir=${includedir}/classpath \
-  --with-vm=java \
   --disable-Werror \
   --with-antlr-jar=${STAGING_DATADIR_JAVA_NATIVE}/antlr.jar \
   --with-gmp=${STAGING_LIBDIR}/.. \
   --disable-alsa \
   --disable-dssi \
-  --disable-qt4-peer \
   --disable-plugin \
   --enable-gconf-peer \
   --enable-gtk-peer \
   --enable-local-sockets \
-  --with-vm=java \
   "
 
 
