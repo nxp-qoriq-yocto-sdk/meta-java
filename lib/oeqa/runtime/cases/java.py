@@ -69,12 +69,12 @@ class JavaTest(OERuntimeTestCase):
 
     # As OpenJDK-8 doesn't support compiled mode (JIT) for arm yet we skip this
     # test for now.
-    @OEHasPackage(["openjre-8", "openjdk-8"])
+    @OEHasPackage(["!openjdk-7-jre", "!openjdk-7"])
     @OETestDepends(['java.JavaTest.test_java_exists'])
     @skipIfInDataVar('TUNE_FEATURES', 'armv4', 'OpenJDK 8 compiled mode not yet supported for armv4')
     @skipIfInDataVar('TUNE_FEATURES', 'armv5', 'OpenJDK 8 compiled mode not yet supported for armv5')
     @skipIfInDataVar('TUNE_FEATURES', 'armv6', 'OpenJDK 8 compiled mode not yet supported for armv6')
-    def test_java8_jar_comp_mode(self):
+    def test_java_jar_comp_mode(self):
         status, output = self.target.run('java -showversion -Xcomp -jar /tmp/test.jar')
         msg = 'Exit status was not 0. Output: %s' % output
         self.assertEqual(status, 0, msg=msg)

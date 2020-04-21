@@ -73,7 +73,6 @@ way is to add the following configuration to your local.conf:
 
 SANITY_TESTED_DISTROS = ""
 INHERIT += "testimage"
-TESTIMAGE_AUTO = "1"
 
 Then you should be able to use the open{jre,jdk}-{7,8}-test-image recipes.
 Furthermore you could also include the tests provided in lib/oeqa/runtime/cases
@@ -110,6 +109,19 @@ list at openembedded-devel@lists.openembedded.org.
 Usage instructions
 ------------------
 
+Simply rely on openjdk-7-jre, openjdk-7, openjdk-8 or openjre-8.
+
+For conf/bblayers.conf you have to add
+
+BBLAYERS ?= " \
+   ...
+  path_to_source/meta-openembedded/meta-oe \
+  path_to_source/sources/meta-java \
+  "
+
+Extra usage instructions OpenJDK-7 & OpenJDK-8
+----------------------------------------------
+
 You should define at least the following variables in a distro include file or local.conf
 
 # Possible provider: cacao-initial-native and jamvm-initial-native
@@ -121,15 +133,13 @@ PREFERRED_PROVIDER_virtual/java-native = "jamvm-native"
 # Optional since there is only one provider for now
 PREFERRED_PROVIDER_virtual/javac-native = "ecj-bootstrap-native"
 
-Simply rely on openjdk-7-jre, openjdk-7, openjdk-8 or openjre-8.
+Extra usage instructions OpenJDK-14
+-----------------------------------
 
-For conf/bblayers.conf you have to add
+You should define at least the following variables in a distro include file or local.conf
 
-BBLAYERS ?= " \
-   ...
-  path_to_source/meta-openembedded/meta-oe \
-  path_to_source/sources/meta-java \
-  "
+# The boot-jdk used to bootstrap openjdk-14-native (needs to be jdk v13 || v14)
+OPENJDK14_BOOT_JDK = "/path/to/boot-jdk"
 
 Build host dependencies
 -----------------------

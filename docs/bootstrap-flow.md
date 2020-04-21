@@ -1,3 +1,11 @@
+# meta-java OpenJDK bootstrap workflow #
+
+## OpenJDK-14 ##
+
+ * TODO
+
+## OpenJDK-7 and OpenJDK-8 ##
+
 * first jikes-native is compiled
   * a Java 1.4-capable compiler that does not need a runtime or
     (strictly) a class library to work
